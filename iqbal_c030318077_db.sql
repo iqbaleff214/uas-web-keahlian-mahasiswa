@@ -1,8 +1,6 @@
--- Dumping database structure for iqbal_c030318077_db
 CREATE DATABASE IF NOT EXISTS `iqbal_c030318077_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `iqbal_c030318077_db`;
 
--- Dumping structure for table iqbal_c030318077_db.keahlian
 CREATE TABLE IF NOT EXISTS `keahlian` (
   `keahlian_id` int(11) NOT NULL AUTO_INCREMENT,
   `keahlian` varchar(50) NOT NULL,
@@ -11,8 +9,6 @@ CREATE TABLE IF NOT EXISTS `keahlian` (
   PRIMARY KEY (`keahlian_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
--- Dumping data for table iqbal_c030318077_db.keahlian: ~9 rows (approximately)
-DELETE FROM `keahlian`;
 /*!40000 ALTER TABLE `keahlian` DISABLE KEYS */;
 INSERT INTO `keahlian` (`keahlian_id`, `keahlian`, `bidang`, `keterangan`) VALUES
 	(6, 'Jaringan Komputer', 'Network Adminstrator', ''),
@@ -27,7 +23,6 @@ INSERT INTO `keahlian` (`keahlian_id`, `keahlian`, `bidang`, `keterangan`) VALUE
 	(15, 'Keamanan Jaringan', 'Bug Hunter', 'Mencari celah keamanan');
 /*!40000 ALTER TABLE `keahlian` ENABLE KEYS */;
 
--- Dumping structure for table iqbal_c030318077_db.mahasiswa
 CREATE TABLE IF NOT EXISTS `mahasiswa` (
   `mahasiswa_id` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(50) NOT NULL,
@@ -45,8 +40,6 @@ CREATE TABLE IF NOT EXISTS `mahasiswa` (
   CONSTRAINT `KEAHLIAN` FOREIGN KEY (`keahlian_id`) REFERENCES `keahlian` (`keahlian_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
--- Dumping data for table iqbal_c030318077_db.mahasiswa: ~2 rows (approximately)
-DELETE FROM `mahasiswa`;
 /*!40000 ALTER TABLE `mahasiswa` DISABLE KEYS */;
 INSERT INTO `mahasiswa` (`mahasiswa_id`, `nama`, `nim`, `keahlian_id`, `program_studi`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `alamat`, `no_hp`) VALUES
 	(2, 'M. Iqbal Effendi', 'C030318077', 11, 'Teknik Informatika', 'Martapura', '2000-04-21', 'Laki-laki', 'Islam', 'Jl. Padat Karya Komp. Perdana Mandiri', '082159142175'),
@@ -59,7 +52,6 @@ INSERT INTO `mahasiswa` (`mahasiswa_id`, `nama`, `nim`, `keahlian_id`, `program_
 	(10, 'M.Sya’bul Huda', 'C030318079', 6, 'Teknik Informatika', 'Timbun Tulang', '2001-04-11', 'Laki-laki', 'Islam', 'Cempaka', '08215914175');
 /*!40000 ALTER TABLE `mahasiswa` ENABLE KEYS */;
 
--- Dumping structure for table iqbal_c030318077_db.akun
 CREATE TABLE IF NOT EXISTS `akun` (
   `akun_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
@@ -70,8 +62,6 @@ CREATE TABLE IF NOT EXISTS `akun` (
   CONSTRAINT `MAHASISWA` FOREIGN KEY (`mahasiswa_id`) REFERENCES `mahasiswa` (`mahasiswa_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table iqbal_c030318077_db.akun: ~0 rows (approximately)
-DELETE FROM `akun`;
 /*!40000 ALTER TABLE `akun` DISABLE KEYS */;
 INSERT INTO `akun` (`akun_id`, `username`, `password`, `mahasiswa_id`) VALUES
 	(1, 'admin', '$2y$10$S3LI/vcATwxEjhZgZgpGqu2efnCWtNm13ZcfHwsvpa8HWM3LjuhiW', NULL);

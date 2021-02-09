@@ -14,7 +14,7 @@ Selain itu, kita juga memerlukan [Composer](https://getcomposer.org/download/) u
 
 ## Persiapan
 
-Siapkan _database_. Telah disediakan pengembang di dalam _root folder_.
+Siapkan _database_ dengan nama `iqbal_c030318077_db`. Skema telah disediakan pengembang di dalam _root folder_ dengan nama yang sama.
 
 ## Pemasangan
 
@@ -35,14 +35,15 @@ Ada dua cara yang bisa dilakukan untuk menyalin aplikasi web ini ke perangkat ki
 2.  _Download_ ZIP
 
     -   Kita juga dapat mengunduh _file_ yang berupa zip, dengan menekan tombol Code berwarna hijau kemudian tekan _`Download ZIP`_ atau dapat juga dengan menekan [tautan ini](https://github.com/iqbaleff214/uas-web-keahlian-mahasiswa/archive/main.zip).
-    -   _Extract file_ zip yang telah didownload di _folder_ atau direktori yang diinginkan (_folder_ _htdocs_ pada XAMPP atau _folder_ _www_ pada Laragon).
+    -   _Extract file_ zip yang telah diunduh di _root folder localhost_ (_folder_ _htdocs_ pada XAMPP atau _folder_ _www_ pada Laragon).
 
 ## Konfigurasi
 
 Kita dapat membuka aplikasi web terlebih dahulu menggunakan editor kesayangan kita masing-masing, entah itu [Visual Studio Code](https://code.visualstudio.com/download), [Sublime Text](https://www.sublimetext.com/3), atau bahkan [PhpStorm](https://www.jetbrains.com/phpstorm/download/) yang berbayar.
 
 -   Buka `terminal`, `bash`, `cmd`, atau `git bash` dan pastikan kita telah berada di dalam _folder_ atau direktori aplikasi web ini
--   Buka _file_ `database.php` yang terletak di _folder_ `application/config/` dan lakukan penyesuaian terhadap _host_, _password_, dan nama _database_
+-   Buka _file_ `database.php` yang terletak di _folder_ `application/config/` dan lakukan penyesuaian terhadap _host_ dan _password_.
+-   Jika mengganti nama _folder_ atau menaruh sistem selain pada _root folder localhost_ , maka diperlukan konfigurasi tambahan di _folder_ `application/config/` pada _file_ `config.php`. Ganti nilai dari `$config['base_url']` sesuai dengan lokasi anda menaruh aplikasi web ini.
 -   Jalankan perintah:
 
     ```bash
