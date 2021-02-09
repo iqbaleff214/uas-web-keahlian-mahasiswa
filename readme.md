@@ -34,7 +34,7 @@ Ada dua cara yang bisa dilakukan untuk menyalin aplikasi web ini ke perangkat ki
 
 2.  _Download_ ZIP
 
-    -   Kita juga dapat mengunduh _file_ yang berupa zip, dengan menekan tombol Code berwarna hijau kemudian tekan _`Download ZIP`_ atau dapat juga dengan menekan [tautan ini](https://github.com/iqbaleff214/uas-web-keahlian-mahasiswa/archive/main.zip).
+    -   Kita juga dapat mengunduh _file_ yang berupa zip, dengan menekan tombol Code berwarna hijau kemudian tekan _`Download ZIP`_ atau dapat juga dengan mengunduh versi rilis pada [tautan ini](https://github.com/iqbaleff214/uas-web-keahlian-mahasiswa/releases/tag/v1.0).
     -   _Extract file_ zip yang telah diunduh di _root folder localhost_ (_folder_ _htdocs_ pada XAMPP atau _folder_ _www_ pada Laragon).
 
 ## Konfigurasi
