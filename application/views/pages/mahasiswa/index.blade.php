@@ -4,10 +4,9 @@
 <thead>
     <tr>
         <th>No.</th>
-        <th>Foto</th>
-        <th>NIP</th>
+        <th>NIM</th>
         <th>Nama</th>
-        <th>Jabatan</th>
+        <th>Prodi</th>
         <th>Alamat</th>
         <th>Aksi</th>
     </tr>
@@ -19,13 +18,12 @@
     @foreach ($items as $item)
     <tr>
         <td>{{ $loop->iteration }}</td>
-        <td>{{ null_field($item['foto']) }}</td>
-        <td>{{ null_field($item['nip']) }}</td>
+        <td>{{ null_field($item['nim']) }}</td>
         <td>{{ null_field($item['nama']) }}</td>
-        <td>{{ null_field($item['jabatan']) }}</td>
+        <td>{{ null_field($item['program_studi']) }}</td>
         <td>{{ null_field($item['alamat']) }}</td>
         <td class="text-center">
-            {!! action_menu($item['id']) !!}
+            {!! action_menu($item['mahasiswa_id']) !!}
         </td>
     </tr>
     @endforeach
@@ -34,26 +32,34 @@
 
 @push('scripts')
     <script>
+        const keahlian_id = "{{ $item['keahlian_id'] }}" || null;
         const generateBody = (obj) => {
-            _title.innerHTML = obj.nama;
+            _title.innerHTML = obj.nim;
+            let row = ``;
+            if (keahlian_id) {
+                row = `
+                <div class="row">
+                    <div class="col-md-4 text-right font-weight-bold">Keahlian</div>
+                    <div class="col-md-8 text-muted">${obj.keahlian || '-'}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-right font-weight-bold">Bidang</div>
+                    <div class="col-md-8 text-muted">${obj.bidang || '-'}</div>
+                </div>
+                `;
+            }
             return `
                 <div class="row">
-                    <div class="col-md-4 text-right font-weight-bold">NIP</div>
-                    <div class="col-md-8 text-muted">${obj.nip || '-'}</div>
+                    <div class="col-md-4 text-right font-weight-bold">NIM</div>
+                    <div class="col-md-8 text-muted">${obj.nim || '-'}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 text-right font-weight-bold">Nama</div>
                     <div class="col-md-8 text-muted">${obj.nama || '-'}</div>
                 </div>
-                </div>
                 <div class="row">
-                    <div class="col-md-4 text-right font-weight-bold">Jabatan</div>
-                    <div class="col-md-8 text-muted">${obj.jabatan+' '+obj.golongan || '-'}</div>
-                </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 text-right font-weight-bold">Gaji</div>
-                    <div class="col-md-8 text-muted">${ formatter.format(parseInt(obj.gaji)+parseInt(obj.tunjangan)) || '-'}</div>
+                    <div class="col-md-4 text-right font-weight-bold">Program Studi</div>
+                    <div class="col-md-8 text-muted">${obj.program_studi || '-'}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 text-right font-weight-bold">Jenis Kelamin</div>
@@ -72,24 +78,17 @@
                     <div class="col-md-8 text-muted">${obj.alamat || '-'}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 text-right font-weight-bold">Pendidikan Terakhir</div>
-                    <div class="col-md-8 text-muted">${obj.pendidikan || '-'}</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 text-right font-weight-bold">Status</div>
-                    <div class="col-md-8 text-muted">${obj.status || '-'}</div>
-                </div>
-                <div class="row">
                     <div class="col-md-4 text-right font-weight-bold">No. Hp</div>
                     <div class="col-md-8 text-muted">${obj.no_hp || '-'}</div>
                 </div>
+                ${row}
             `;
         }
 
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('view-item')) {
                 const id = e.target.dataset.id
-                const url = parseUrl(`pegawai/read/${id}`);
+                const url = keahlian_id ? parseUrl(`mahasiswa/read_all/${id}`) : parseUrl(`mahasiswa/read/${id}`);
                 fetch(url).then(data => data.json()).then(data => {
                     _body.innerHTML = generateBody(data);
                 }).catch(err => console.error(err));

@@ -1,25 +1,28 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Jabatan extends CI_Controller
+class Keahlian extends CI_Controller
 {
     private $class;
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Jabatan_model', 'jabatan');
+        if (!is_login()) return redirect('auth');
+        if (!is_admin()) return redirect();
+
+        $this->load->model('Keahlian_model', 'keahlian');
         $this->class = $this->router->fetch_class();
     }
 
     public function index()
     {
         $data = [
-            'title' => 'Jabatan',
+            'title' => 'Keahlian',
             'sidebar' => ['master', $this->class],
-            'items' => $this->jabatan->get()
+            'items' => $this->keahlian->get()
         ];
-        return view('pages.jabatan.index', $data);
+        return view('pages.keahlian.index', $data);
     }
 
     public function create()
@@ -30,13 +33,12 @@ class Jabatan extends CI_Controller
         if ($this->form_validation->run()) return $this->_store();
 
         $data = [
-            'title' => 'Jabatan',
+            'title' => 'keahlian',
             'sidebar' => ['master', $this->class],
             'input' => [
-                'jabatan' => ['label' => 'Jabatan*', 'type' => 'text'],
-                'golongan' => ['label' => 'Golongan*', 'type' => 'text'],
-                'gaji' => ['label' => 'Gaji*', 'type' => 'text'],
-                'tunjangan' => ['label' => 'Jumlah Tunjangan*', 'type' => 'text'],
+                'keahlian' => ['label' => 'Keahlian*', 'type' => 'text'],
+                'bidang' => ['label' => 'Bidang*', 'type' => 'text'],
+                'keterangan' => ['label' => 'Keterangan', 'type' => 'textarea'],
             ]
         ];
         return view('layout.base.form', $data);
@@ -45,7 +47,7 @@ class Jabatan extends CI_Controller
     private function _store()
     {
         $data = $this->input->post();
-        $res = $this->jabatan->insert($data);
+        $res = $this->keahlian->insert($data);
         if ($res) {
             $this->session->set_flashdata('success', "Berhasil menambahkan $this->class!");
         } else {
@@ -63,18 +65,17 @@ class Jabatan extends CI_Controller
 
         if ($this->form_validation->run()) return $this->_update($id);
 
-        $item = $this->jabatan->get($id);
+        $item = $this->keahlian->get($id);
         if (!$item) return redirect($this->class);
 
         $data = [
             'id' => $id,
-            'title' => 'Jabatan',
+            'title' => 'keahlian',
             'sidebar' => ['master', $this->class],
             'input' => [
-                'jabatan' => ['label' => 'Jabatan*', 'type' => 'text', 'value' => $item['jabatan']],
-                'golongan' => ['label' => 'Golongan*', 'type' => 'text', 'value' => $item['golongan']],
-                'gaji' => ['label' => 'Gaji*', 'type' => 'number', 'value' => $item['gaji']],
-                'tunjangan' => ['label' => 'Jumlah Tunjangan*', 'type' => 'number', 'value' => $item['tunjangan']],
+                'keahlian' => ['label' => 'Keahlian*', 'type' => 'text', 'value' => $item['keahlian']],
+                'bidang' => ['label' => 'Bidang*', 'type' => 'text', 'value' => $item['bidang']],
+                'keterangan' => ['label' => 'Keterangan', 'type' => 'textarea', 'value' => $item['keterangan']],
             ]
         ];
         return view('layout.base.form', $data);
@@ -85,7 +86,7 @@ class Jabatan extends CI_Controller
         if (!$id) return redirect($this->class);
 
         $data = $this->input->post();
-        $res = $this->jabatan->update($id, $data);
+        $res = $this->keahlian->update($id, $data);
         if ($res) {
             $this->session->set_flashdata('success', "Berhasil mengubah $this->class!");
         } else {
@@ -100,7 +101,7 @@ class Jabatan extends CI_Controller
         $id = $this->input->post('id');
         if (!$id) return redirect($this->class);
 
-        $res = $this->jabatan->delete($id);
+        $res = $this->keahlian->delete($id);
         if ($res) {
             $this->session->set_flashdata('success', "Berhasil menghapus $this->class!");
         } else {
@@ -113,9 +114,7 @@ class Jabatan extends CI_Controller
     private function _validation()
     {
 
-        $this->form_validation->set_rules('jabatan', '', 'required');
-        $this->form_validation->set_rules('golongan', '', 'required');
-        $this->form_validation->set_rules('gaji', '', 'required|numeric');
-        $this->form_validation->set_rules('tunjangan', '', 'required|numeric');
+        $this->form_validation->set_rules('keahlian', '', 'required');
+        $this->form_validation->set_rules('bidang', '', 'required');
     }
 }

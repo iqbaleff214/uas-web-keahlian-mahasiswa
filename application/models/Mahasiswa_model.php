@@ -1,17 +1,17 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pegawai_model extends CI_Model
+class Mahasiswa_model extends CI_Model
 {
-    private $table = 'personel';
-    private $id = 'id';
+    private $table = 'mahasiswa';
+    private $id = 'mahasiswa_id';
 
-    public function get($id = null, $jabatan = true)
+    public function get($id = null, $keahlian = true)
     {
-        if ($id) return $this->find($id);
-        if ($jabatan) {
-            $this->db->select("$this->table.*, jabatan.jabatan, jabatan.golongan, jabatan.gaji, jabatan.tunjangan");
-            $this->db->join('jabatan', "jabatan.id=$this->table.jabatan_id");
+        if ($id) return $this->find($id, $keahlian);
+        if ($keahlian) {
+            $this->db->select("*");
+            $this->db->join('keahlian', "keahlian.keahlian_id=$this->table.keahlian_id");
         }
         return $this->db->get($this->table)->result_array();
     }
@@ -28,12 +28,12 @@ class Pegawai_model extends CI_Model
         return $column ? $res[$column] : $res;
     }
 
-    public function find($id, $jabatan = true)
+    public function find($id, $keahlian = true)
     {
-        if (!$id) return $this->get();
-        if ($jabatan) {
-            $this->db->select("$this->table.*, jabatan.jabatan, jabatan.golongan, jabatan.gaji, jabatan.tunjangan");
-            $this->db->join('jabatan', "jabatan.id=$this->table.jabatan_id");
+        if (!$id) return $this->get($id, $keahlian);
+        if ($keahlian) {
+            $this->db->select("*");
+            $this->db->join('keahlian', "keahlian.keahlian_id=$this->table.keahlian_id");
         }
         return $this->db->get_where($this->table, ["$this->table.$this->id" => $id])->row_array();
     }

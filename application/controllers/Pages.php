@@ -6,12 +6,17 @@ class Pages extends CI_Controller
 
     public function index()
     {
-        $this->load->model('Pegawai_model', 'pegawai');
+        if (!is_login()) return redirect('auth');
+
+        $this->load->model('Mahasiswa_model', 'mahasiswa');
+        $this->load->model('Keahlian_model', 'keahlian');
         $data = [
             'title' => 'Beranda',
             'sidebar' => ['dasbor'],
             'count' => [
-                'pegawai' => $this->pegawai->count()
+                'mahasiswa' => $this->mahasiswa->count(),
+                'keahlian' => $this->keahlian->count(null, 'keahlian'),
+                'bidang' => $this->keahlian->count(),
             ]
         ];
         return view('pages.dashboard', $data);

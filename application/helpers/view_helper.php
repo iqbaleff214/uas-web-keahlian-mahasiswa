@@ -20,6 +20,15 @@ if (!function_exists('asset')) {
     }
 }
 
+if (!function_exists('truncate')) {
+    function truncate($str, $chars = 25, $end = '...')
+    {
+        if (strlen($str) <= $chars) return $str;
+        $new = substr($str, 0, $chars + 1);
+        return substr($new, 0, strrpos($new, ' ')) . $end;
+    }
+}
+
 if (!function_exists('active_sidebar')) {
     function active_sidebar($link, $data)
     {

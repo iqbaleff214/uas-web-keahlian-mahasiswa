@@ -65,7 +65,7 @@
   <!-- /.content-wrapper --> 
   <!-- Modal -->
 <div class="modal fade" id="modalShow" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="modalShowLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modalShowLabel">Modal title</h5>
@@ -109,7 +109,7 @@
       currency: 'IDR',
   });
 
-  const parseUrl = endpoint => `${location.protocol}//${location.host}/ajax/${endpoint}`;
+  const parseUrl = endpoint => `${location.protocol}//${location.host}/iqbal-c030318077/ajax/${endpoint}`;
 
   $(function () {
     const title = "Data {{ $title }}";

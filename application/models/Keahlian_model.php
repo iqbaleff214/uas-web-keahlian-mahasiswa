@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Jabatan_model extends CI_Model
+class Keahlian_model extends CI_Model
 {
-    private $table = 'jabatan';
-    private $id = 'id';
+    private $table = 'keahlian';
+    private $id = 'keahlian_id';
 
     public function get($id = null)
     {
@@ -38,6 +38,17 @@ class Jabatan_model extends CI_Model
     public function hasRow($table = null)
     {
         if (!$table) $table = $this->table;
-        return $this->db->count_all_results($table) > 0;
+        return $this->count($table) > 0;
+    }
+
+    public function count($table = null, $groupBy = null)
+    {
+        if (!$table) $table = $this->table;
+        if ($groupBy) {
+            $this->db->select($groupBy);
+            $this->db->group_by("$this->table.$groupBy");
+        }
+        $this->db->from($table);
+        return $this->db->get()->num_rows();
     }
 }

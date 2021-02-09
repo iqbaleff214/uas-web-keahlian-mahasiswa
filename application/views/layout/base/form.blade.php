@@ -65,11 +65,20 @@
                               @if ($val['option-type']=='enum')
                                 <option value="{{ $item }}" @isset($val['value']) @if($item==$val['value']) selected="selected" @endif @endisset >{{ $item }}</option>
                               @else
-                                <option value="{{ $item['id'] }}" @isset($val['value']) @if($item['id']==$val['value']) selected="selected" @endif @endisset >{{ $item['jabatan'].' '.$item['golongan'] }}</option>
+                                <option value="{{ $item['keahlian_id'] }}" @isset($val['value']) @if($item['keahlian_id']==$val['value']) selected="selected" @endif @endisset >{{ $item['keahlian'] }} ({{ $item['bidang'] }})</option>
                               @endif
                             @endforeach
                         </select>
                     </div>
+                  </div>
+                      @break
+                    
+                  @case('textarea')
+                  <div class="form-group row">
+                      <label for="{{ $key }}" class="col-sm-2 col-form-label">{{ $val['label'] }}</label>
+                      <div class="col-sm-10">
+                          <textarea class="form-control @if(form_error($key)) is-invalid @endif" id="{{ $key }}" rows="3" name="{{ $key }}" {{ isset($val['readonly']) ? 'disabled' : '' }} autocomplete="off">{{ set_value($key, (isset($val['value'])) ? $val['value'] : '') }}</textarea>
+                      </div>
                   </div>
                       @break
 

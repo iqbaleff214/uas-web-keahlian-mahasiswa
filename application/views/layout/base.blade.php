@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SIMPEG | @yield('title')</title>
+  <title>C030318077 | @yield('title')</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -31,7 +31,10 @@
         <a href="{{ site_url() }}" class="nav-link">Beranda</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ site_url('pegawai') }}" class="nav-link">Data Pegawai</a>
+        <a href="{{ site_url('mahasiswa') }}" class="nav-link">Mahasiswa</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ site_url('keahlian') }}" class="nav-link">Keahlian</a>
       </li>
     </ul>
 
@@ -70,7 +73,7 @@
           </a> --}}
           <div class="dropdown-divider"></div>
           {{-- <a href="#" class="dropdown-item dropdown-footer">Keluar</a> --}}
-          <a href="#" class="dropdown-item">
+          <a href="{{ site_url('auth/logout') }}" class="dropdown-item">
             <i class="fas fa-door-open mr-2"></i> Keluar
             </a>
         </div>
@@ -83,8 +86,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ site_url() }}" class="brand-link">
-      <img src="{{ asset('img/amangkodingdotid.jpeg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text">SIMPEG <span class="font-weight-light">v1</span></span>
+      <img src="{{ asset('img/c030318077.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text">C030318077 <span class="font-weight-light">UAS</span></span>
     </a>
 
     <!-- Sidebar -->
@@ -118,23 +121,23 @@
             <a href="#" class="nav-link {{ active_sidebar('master', $sidebar) }}">
               <i class="nav-icon fas fa-server"></i>
               <p>
-                Master Data 
+                Data Induk
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ site_url('pegawai') }}" class="nav-link {{ active_sidebar('pegawai', $sidebar) }}">
+                <a href="{{ site_url('mahasiswa') }}" class="nav-link {{ active_sidebar('mahasiswa', $sidebar) }}">
                   <i class="fas fa-users nav-icon"></i>
-                  <p>Pegawai</p>
+                  <p>Mahasiswa</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ site_url('jabatan') }}" class="nav-link {{ active_sidebar('jabatan', $sidebar) }}">
-                  <i class="fas fa-briefcase nav-icon"></i>
-                  <p>Jabatan</p>
+                <a href="{{ site_url('keahlian') }}" class="nav-link {{ active_sidebar('keahlian', $sidebar) }}">
+                  <i class="fas fa-cogs nav-icon"></i>
+                  <p>Keahlian</p>
                 </a>
               </li>
             </ul>
@@ -152,9 +155,9 @@
 
   <footer class="main-footer text-sm">
     <div class="float-right d-none d-sm-block">
-        SIMPEG v1 by amangkodingdotid
+        Sistem Keahlian by M. Iqbal Effendi C030318077
     </div>
-    <strong>Copyright &copy; {{ date('Y') }} <a href="#" target="_blank">amangkodingdotid</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; {{ date('Y') }} <a href="https://github.com/iqbaleff214" target="_blank">iqbaleff214</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
