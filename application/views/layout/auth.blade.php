@@ -18,7 +18,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{ site_url() }}"><b>Admin</b>LTE</a>
+    <a href="{{ site_url() }}"><b>C030318077</b>UAS</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

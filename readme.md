@@ -57,7 +57,7 @@ Kita dapat membuka aplikasi web terlebih dahulu menggunakan editor kesayangan ki
 
 ## _Screenshot_
 ### _Halaman Login_
-![Halaman Login](http://drive.google.com/uc?export=view&id=1lgVsS0QesdwdBC8dxF577TU6XrCkR7AZ)
+![Halaman Login](http://drive.google.com/uc?export=view&id=1NvZ4gX6gW2yvrvGCIp5TnPVFqXNbLXQV)
 ### _Halaman Beranda_
 ![Halaman Beranda](http://drive.google.com/uc?export=view&id=1EnJJs4v5bcglZOJqpA3LJ4-7UWrvrMBz)
 ### _Halaman Mahasiswa_
