@@ -55,6 +55,9 @@ Kita dapat membuka aplikasi web terlebih dahulu menggunakan editor kesayangan ki
 -   Untuk menjalankan aplikasi web ini, anda cukup membuka _browser_ dan ketikkan url `http://localhost/iqbal-c030318077/`. Pastikan _web server_ dan _database management system_ anda telah diaktifkan.
 -   Untuk dapat melakukan login, masukkan `admin` pada kolom _username_ dan _password_. Nb: Tidak terdapat fitur mengganti _password_.
 
+## _Screenshot_
+![Halaman Login](http://drive.google.com/uc?export=view&id=1lgVsS0QesdwdBC8dxF577TU6XrCkR7AZ)
+
 ## Penutup
 
 _Alhamdulillah_, aplikasi web ini tentunya memiliki banyak kekurangan dan masih bisa ditingkatkan lagi. Harapannya aplikasi web ini dapat menjadi bahan referensi dan dikembangkan menjadi lebih baik kedepannya.
