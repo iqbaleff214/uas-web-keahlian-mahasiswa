@@ -56,7 +56,18 @@ Kita dapat membuka aplikasi web terlebih dahulu menggunakan editor kesayangan ki
 -   Untuk dapat melakukan login, masukkan `admin` pada kolom _username_ dan _password_. Nb: Tidak terdapat fitur mengganti _password_.
 
 ## _Screenshot_
+### _Halaman Login_
 ![Halaman Login](http://drive.google.com/uc?export=view&id=1lgVsS0QesdwdBC8dxF577TU6XrCkR7AZ)
+### _Halaman Beranda_
+![Halaman Beranda](http://drive.google.com/uc?export=view&id=1EnJJs4v5bcglZOJqpA3LJ4-7UWrvrMBz)
+### _Halaman Mahasiswa_
+![Halaman Mahasiswa 1](http://drive.google.com/uc?export=view&id=11_iNmUh2ACLgoL4cSPWfU_1twJb2tcpP)
+![Halaman Mahasiswa 2](http://drive.google.com/uc?export=view&id=1X0E5lGdIckoKDudZZhDHK1-oxmfFazMY)
+![Halaman Mahasiswa 3](http://drive.google.com/uc?export=view&id=1UKlDHz7ReDpEZ34zrlVftNzfYeN3g59u)
+### _Halaman Keahlian_
+![Halaman Keahlin 1](http://drive.google.com/uc?export=view&id=1xGyIh-PyjCa7JntxC3HM070F-__aG8tR)
+![Halaman Keahlin 3](http://drive.google.com/uc?export=view&id=1AtDh7parJSfBzEHGh57rT5lNA27PJ7F7)
+![Halaman Keahlin 2](http://drive.google.com/uc?export=view&id=1--VUlSMAkxXwqGAM47HIdWGfoiw3nKIc)
 
 ## Penutup
 
