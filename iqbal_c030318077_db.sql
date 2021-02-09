@@ -9,20 +9,6 @@ CREATE TABLE IF NOT EXISTS `keahlian` (
   PRIMARY KEY (`keahlian_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
-/*!40000 ALTER TABLE `keahlian` DISABLE KEYS */;
-INSERT INTO `keahlian` (`keahlian_id`, `keahlian`, `bidang`, `keterangan`) VALUES
-	(6, 'Jaringan Komputer', 'Network Adminstrator', ''),
-	(7, 'Jaringan Komputer', 'Network Analyst', ''),
-	(8, 'Keamanan Jaringan', 'Network Security', ''),
-	(9, 'Keamanan Komputer', 'Penetration Tester', ''),
-	(10, 'Basis Data', 'Database Adminstrator', ''),
-	(11, 'Pemrograman', 'Fullstack Developer', ''),
-	(12, 'Pemrograman', 'Software Engineer', ''),
-	(13, 'Basis Data', 'Database Engineer', ''),
-	(14, 'Jaringan Komputer', 'Network Engineer', ''),
-	(15, 'Keamanan Jaringan', 'Bug Hunter', 'Mencari celah keamanan');
-/*!40000 ALTER TABLE `keahlian` ENABLE KEYS */;
-
 CREATE TABLE IF NOT EXISTS `mahasiswa` (
   `mahasiswa_id` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(50) NOT NULL,
@@ -39,18 +25,6 @@ CREATE TABLE IF NOT EXISTS `mahasiswa` (
   KEY `KEAHLIAN` (`keahlian_id`),
   CONSTRAINT `KEAHLIAN` FOREIGN KEY (`keahlian_id`) REFERENCES `keahlian` (`keahlian_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
-
-/*!40000 ALTER TABLE `mahasiswa` DISABLE KEYS */;
-INSERT INTO `mahasiswa` (`mahasiswa_id`, `nama`, `nim`, `keahlian_id`, `program_studi`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `alamat`, `no_hp`) VALUES
-	(2, 'M. Iqbal Effendi', 'C030318077', 11, 'Teknik Informatika', 'Martapura', '2000-04-21', 'Laki-laki', 'Islam', 'Jl. Padat Karya Komp. Perdana Mandiri', '082159142175'),
-	(4, 'Muhamad Khairi', 'C030318078', 10, 'Teknik Informatika', 'Banjarmasin', '2000-01-10', 'Laki-laki', 'Islam', 'Pekapuran Raya', '082159142175'),
-	(5, 'Najriyani', 'C030318089', 7, 'Teknik Informatika', 'Tanah Laut', '2000-11-12', 'Laki-laki', 'Islam', 'Takisung', '082159142175'),
-	(6, 'Nafila Fayruz', 'C030318088', 12, 'Teknik Informatika', 'Banjarmasin', '2001-01-26', 'Perempuan', 'Islam', 'Semangat Dalam', '082159142175'),
-	(7, 'Novanti Sukma Permana', 'C030318091', 6, 'Teknik Informatika', 'Banjarmasin', '1999-11-28', 'Laki-laki', 'Islam', 'Liang Anggang', '082159142175'),
-	(8, 'Henny Oktapiyana', 'C030318073', 10, 'Teknik Informatika', 'Anjir Pasar', '1999-08-25', 'Perempuan', 'Islam', 'Anjir Pasar', '082159142174'),
-	(9, 'Rifky Ridha Syafikri', 'C030318092', 9, 'Teknik Informatika', 'Durian Gantang', '2000-01-15', 'Laki-laki', 'Islam', 'Durian Gantang', '082152342933'),
-	(10, 'M.Sya’bul Huda', 'C030318079', 6, 'Teknik Informatika', 'Timbun Tulang', '2001-04-11', 'Laki-laki', 'Islam', 'Cempaka', '08215914175');
-/*!40000 ALTER TABLE `mahasiswa` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `akun` (
   `akun_id` int(11) NOT NULL AUTO_INCREMENT,
