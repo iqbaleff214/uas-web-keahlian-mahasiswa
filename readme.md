@@ -41,10 +41,10 @@ Ada dua cara yang bisa dilakukan untuk menyalin aplikasi web ini ke perangkat ki
 
 Kita dapat membuka aplikasi web terlebih dahulu menggunakan editor kesayangan kita masing-masing, entah itu [Visual Studio Code](https://code.visualstudio.com/download), [Sublime Text](https://www.sublimetext.com/3), atau bahkan [PhpStorm](https://www.jetbrains.com/phpstorm/download/) yang berbayar.
 
--   Buka `terminal`, `bash`, `cmd`, atau `git bash` dan pastikan kita telah berada di dalam _folder_ atau direktori aplikasi web ini
 -   Buka _file_ `database.php` yang terletak di _folder_ `application/config/` dan lakukan penyesuaian terhadap _host_ dan _password_.
 -   Jika mengganti nama _folder_ atau menaruh sistem selain pada _root folder localhost_ , maka diperlukan konfigurasi tambahan di _folder_ `application/config/` pada _file_ `config.php`. Ganti nilai dari `$config['base_url']` sesuai dengan lokasi anda menaruh aplikasi web ini.
--   Jalankan perintah:
+-   Buka `terminal`, `bash`, `cmd`, atau `git bash` dan pastikan kita telah berada di dalam _folder_ atau direktori aplikasi web ini
+-   Untuk dapat menggunakan _Blade template engine_ yang terdapat pada aplikasi ini, perlukan dilakukan instalasi terlebih dahulu dengan menggunakan `Composer`. Jalankan perintah berikut:
 
     ```bash
     composer install
@@ -53,10 +53,11 @@ Kita dapat membuka aplikasi web terlebih dahulu menggunakan editor kesayangan ki
 
 ## Menjalankan
 
--   Untuk menjalankan aplikasi web ini, anda cukup membuka _browser_ dan ketikkan url `http://localhost/iqbal-c030318077/`. Pastikan _web server_ dan _database management system_ anda telah diaktifkan.
+-   Untuk menjalankan aplikasi web ini, cukup membuka _browser_ dan ketikkan url `http://localhost/iqbal-c030318077/` atau sesuaikan dengan tempat menyimpan aplikasi web ini. Pastikan _web server_ dan _database management system_ telah diaktifkan.
 -   Untuk dapat melakukan login, masukkan `admin` pada kolom _username_ dan _password_. Nb: Tidak terdapat fitur mengganti _password_.
 
 ## _Screenshot_
+Berikut adalah tampilan dari aplikasi web ini:
 ### _Halaman Login_
 ![Halaman Login](http://drive.google.com/uc?export=view&id=1NvZ4gX6gW2yvrvGCIp5TnPVFqXNbLXQV)
 ### _Halaman Beranda_
@@ -75,4 +76,4 @@ Kita dapat membuka aplikasi web terlebih dahulu menggunakan editor kesayangan ki
 _Alhamdulillah_, aplikasi web ini tentunya memiliki banyak kekurangan dan masih bisa ditingkatkan lagi. Harapannya aplikasi web ini dapat menjadi bahan referensi dan dikembangkan menjadi lebih baik kedepannya.
 
 ## _Credit_
-Aplikasi web ini digunakan untuk memenuhi ujian matakuliah Pemrograman Web.
+Pengembang: M. Iqbal Effendi
