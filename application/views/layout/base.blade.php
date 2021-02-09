@@ -64,14 +64,14 @@
         </a>
         <div class="dropdown-menu dropdown-menu dropdown-menu-right">
           {{-- <div class="dropdown-divider"></div> --}}
-          <a href="#" class="dropdown-item">
+          {{-- <a href="#" class="dropdown-item">
             <i class="fas fa-user-edit mr-2"></i> Profil
-          </a>
+          </a> --}}
           {{-- <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
             <i class="fas fa-file mr-2"></i> 3 new reports
           </a> --}}
-          <div class="dropdown-divider"></div>
+          {{-- <div class="dropdown-divider"></div> --}}
           {{-- <a href="#" class="dropdown-item dropdown-footer">Keluar</a> --}}
           <a href="{{ site_url('auth/logout') }}" class="dropdown-item">
             <i class="fas fa-door-open mr-2"></i> Keluar

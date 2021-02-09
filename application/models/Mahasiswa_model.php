@@ -9,6 +9,7 @@ class Mahasiswa_model extends CI_Model
     public function get($id = null, $keahlian = true)
     {
         if ($id) return $this->find($id, $keahlian);
+        $this->db->order_by('nim');
         if ($keahlian) {
             $this->db->select("*");
             $this->db->join('keahlian', "keahlian.keahlian_id=$this->table.keahlian_id");
